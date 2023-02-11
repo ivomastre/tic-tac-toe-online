@@ -3,7 +3,7 @@ import GameService from '../gameService'
 import io from 'socket.io-client'
 import Statistics from '../../components/statistics'
 
-const socket = io('http://localhost:9000')
+const socket = io(process.env.REACT_APP_SOCKET_URL || 'http://localhost:9000')
 
 const MatchMakingService: FC = () => {
   const [player, setPlayer] = useState('X')
